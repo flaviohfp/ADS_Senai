@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Direction</title>
+  <!-- DICA:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/Universal_selectors
+  https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors/Combinators 
+
+  -->
+
+
+  
+  <style>
+    .container {
+      color: white;
+      border: 5px solid gold;
+      display: flex;
+      flex-direction: column;   /* organiza os blocos em coluna vertical */
+      width: 150px;             /* largura da tabela */
+      height: 100vh;            /* ocupa toda a altura da tela */
+      justify-content: flex-start; /* garante que os blocos comecem do topo */
+    }
+
+    /*
+    Selecione todos os elementos que são filhos diretos de .container class.
+    */
+    .container > div {
+      flex: 1;                  /* todos os blocos têm o mesmo tamanho vertical */
+      display: flex;
+      justify-content: center;  /* centraliza o texto horizontalmente */
+      align-items: center;      /* centraliza o texto verticalmente */
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .red {background-color: #eb4d4b;}
+    .orange {background-color: #f0932b;}
+    .yellow {background-color: #f6e58d; color: #333;}
+    .green {background-color: #6ab04c;}
+    .blue {background-color: #4834d4;}
+    .indigo {background-color: #30336b;}
+    .purple {background-color: #be2edd;}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="red">Red</div>
+    <div class="orange">Orange</div>
+    <div class="yellow">Yellow</div>
+    <div class="green">Green</div>
+    <div class="blue">Blue</div>
+    <div class="indigo">Indigo</div>
+    <div class="purple">Purple</div>
+  </div>
+</body>
+
+</html>

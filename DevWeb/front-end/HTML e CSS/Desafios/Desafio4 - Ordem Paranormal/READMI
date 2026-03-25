@@ -1,0 +1,72 @@
+🕯️ Registro Paranormal — Arquivo da Ordem
+📌 Objetivo do Projeto
+
+O Registro Paranormal tem como objetivo recriar o Sistema de Registro de Criaturas da Ordem, que foi parcialmente destruído após eventos desconhecidos.
+O sistema serve para catalogar, organizar e consultar informações sobre criaturas paranormais, ajudando agentes a identificar ameaças e aumentar as chances de sobrevivência.
+
+🧠 Descrição Narrativa do Sistema
+
+Após meses sem qualquer contato, a Ordem volta a convocar novos agentes.
+Algo deu errado.
+
+O Sistema de Registro de Criaturas, responsável por armazenar dados essenciais sobre entidades paranormais, foi danificado. Sem ele, a humanidade perdeu sua principal forma de compreender o que espreita nas sombras.
+
+Antes de qualquer confronto direto, a missão é clara:
+reconstruir o sistema, recuperar registros perdidos e reorganizar as informações sobre cada criatura conhecida — seus comportamentos, níveis de ameaça e formas de identificação.
+
+Cada registro é vital. Cada erro pode ser fatal.
+
+🧩 Funcionalidades
+
+Exibição de criaturas em formato de cards
+
+Informações principais:
+
+Nome da criatura
+
+Nível de ameaça
+
+Descrição resumida
+
+Botão “Ver Detalhes” para expansão futura
+
+Interface escura e temática, inspirada em arquivos secretos e ocultismo
+
+🛠️ Tecnologias Utilizadas
+
+HTML5 — estrutura do sistema
+
+CSS3 — estilização e identidade visual
+
+Bootstrap 5 — layout responsivo e componentes prontos
+
+JavaScript (futuramente) — interações e dinâmica do sistema
+
+👥 Integrantes do Grupo
+
+Flávio Henrique Furlanetto Pradela
+(adicione outros integrantes aqui, se tiver)
+
+🎨 Estilo e Inspiração
+
+O projeto foi inspirado em:
+
+Arquivos secretos
+
+Sistemas governamentais fictícios
+
+Narrativas de terror investigativo
+
+Universos de RPG e paranormal moderno
+
+A ideia é criar uma experiência que passe a sensação de estar acessando um banco de dados proibido, algo que não deveria existir — mas existe.
+
+🚧 Status do Projeto
+
+🟡 Em desenvolvimento
+Novas criaturas, páginas de detalhes e funcionalidades serão adicionadas.
+
+⚠️ Aviso
+
+O acesso a determinadas informações pode causar paranoia, medo irracional ou desaparecimento inexplicável.
+Prossiga por sua conta e risco.

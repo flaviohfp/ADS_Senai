@@ -1,0 +1,137 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* FUNDO GERAL */
+  body {
+    background-color: #0b0b0f; /* preto azulado */
+    color: #e0e0e0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    border-bottom: 2px solid #6f42c1;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #c9a6ff !important;
+  }
+  
+  .nav-link {
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #c9a6ff !important;
+  }
+  
+  /* TÍTULOS */
+  h1,
+  h2,
+  h5 {
+    color: #f1f1f1;
+  }
+  
+  h2 {
+    margin-bottom: 2rem;
+  }
+  
+  /* TEXTO */
+  .lead {
+    color: #cfcfcf;
+  }
+  
+  /* BOTÕES */
+  .btn-primary {
+    background-color: #6f42c1;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #59339d;
+  }
+  
+  .btn-outline-secondary {
+    border-color: #6f42c1;
+    color: #c9a6ff;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #6f42c1;
+    color: #fff;
+  }
+
+ 
+  
+  /* CARDS */
+  .card {
+    background-color: #14141c;
+    border: 1px solid #2a2a3d;
+    color: #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(111, 66, 193, 0.4);
+  }
+  
+  .card-title {
+    color: #c9a6ff;
+  }
+  
+  .card-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  /* IMAGENS DAS CRIATURAS */
+  .card img {
+    width: 200px;
+    height: 250px;
+
+    border-radius: 6px;
+    filter: grayscale(20%) contrast(110%);
+  }
+  
+  /* FOOTER */
+  footer {
+    color: #ffffff;
+  }
+  
+  footer a {
+    color: #ffffff;
+  }
+  
+  footer a:hover {
+    color: #ffffff;
+  }
+  
+  /* HR */
+  hr {
+    border-color: #ffffff;
+  }
+  
+  /* SCROLLBAR (opcional, mas fica lindo) */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #0b0b0f;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #6f42c1;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #59339d;
+  }
+  

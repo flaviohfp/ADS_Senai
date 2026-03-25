@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   
+
+    <title>Registro Paranormal</title>
+    
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Arquivo da ordem</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarMain"
+          aria-controls="navbarMain"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMain">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="#body">Início</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#criaturas">Criaturas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Sobrevivência</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contato</a>
+            </li>
+          </ul>
+
+          <form role="search">
+            <input
+              class="form-control"
+              type="search"
+              placeholder="Pesquisar"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="px-4 py-5 my-5 text-center">
+      <img
+        class="d-block mx-auto mb-4"
+        src="/docs/5.3/assets/brand/bootstrap-logo.svg"
+        alt="Logo"
+        width="72"
+        height="57"
+      />
+
+      <h1 class="display-5 fw-bold">Banco de Dados de Criaturas Paranormais</h1>
+
+      <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">
+          Após meses de silêncio, a Ordem volta a entrar em contato. Algo deu
+          errado.
+        </p>
+
+        <p class="lead mb-4">
+          O Sistema de Registro de Criaturas, essencial para catalogar e
+          entender ameaças paranormais, foi parcialmente destruído. Sem esse
+          sistema funcionando, a humanidade fica às cegas, incapaz de
+          identificar, estudar ou se proteger das criaturas que surgem nas
+          sombras.
+        </p>
+
+        <p class="lead mb-4">
+          Agora, novos agentes são convocados. Antes de qualquer confronto
+          direto com o paranormal, a missão é clara: reconstruir o sistema,
+          recuperar informações perdidas e organizar os registros novamente. Só
+          assim será possível compreender o que está lá fora — e sobreviver.
+        </p>
+
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+          <button type="button" class="btn btn-primary btn-lg px-4">
+            Botão principal
+          </button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4">
+            Secundário
+          </button>
+        </div>
+      </div>
+
+      <br><br>
+
+      <button id="btnSistema" class="btn btn-danger btn-lg px-4">
+        Testar Sistema Paranormal
+      </button>
+      
+
+      <hr class="my-5" />
+
+      <!-- CRIATURAS REGISTRADAS -->
+      <section class="container px-4 py-5" id="criaturas">
+        <h2 class="pb-2 border-bottom text-center">Criaturas Registradas</h2>
+
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 py-4">
+          <!-- CARD 1 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="./img/criatura1.jpg" alt="observador de Fendas"><br><hr>
+                <h5 class="card-title">O Observador das Fendas</h5>
+                <h6 class="card-subtitle mb-2 text-danger">
+                  Nível de ameaça: ⚠️ Alto
+                </h6>
+                <p class="card-text">
+                  Uma entidade silenciosa que observa suas vítimas através de
+                  rachaduras, espelhos e sombras. Quanto mais tempo é ignorado,
+                  mais próximo ele fica.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="./img/criatura2.jpg" alt="a dama do sussurro"> <br><hr>
+                <h5 class="card-title">A Dama do Sussurro</h5>
+                <h6 class="card-subtitle mb-2 text-warning">
+                  Nível de ameaça: ⚠️ Médio
+                </h6>
+                <p class="card-text">
+                  Manifesta-se por vozes suaves que levam à paranoia. Costuma
+                  atacar grupos isolados durante a noite, explorando medos
+                  pessoais.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <img src="./img/criatura3.jpg" alt="O Carcereiro osseo"><br><hr>
+                <h5 class="card-title">O Carcereiro Ósseo</h5>
+                <h6 class="card-subtitle mb-2 text-dark">
+                  Nível de ameaça: ⚠️ Crítico
+                </h6>
+                <p class="card-text">
+                  Criatura formada por restos humanos e correntes etéreas.
+                  Guarda locais amaldiçoados e elimina qualquer um que tente
+                  escapar.
+                </p>
+              </div>
+              <div class="card-footer bg-transparent border-0">
+                <a href="#" class="btn btn-primary w-100">Ver Detalhes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+<footer class="container">
+  <div
+    class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+  >
+    <p class="col-md-4 mb-0 text-body-secondary">
+      © Arquivo da Ordem — 2026
+    </p>
+
+    <a
+      href="#"
+      class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto text-decoration-none"
+      aria-label="Registro Paranormal"
+    >
+      <span class="fs-5 fw-bold text-body-emphasis">Registro Paranormal</span>
+    </a>
+
+    <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Início</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Criaturas</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Sobrevivência</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link px-2 text-body-secondary">Contato</a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+
+
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    
+    <script src="./js/script.js"></script>
+
+  </body>
+</html>

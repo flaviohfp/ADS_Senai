@@ -1,0 +1,125 @@
+
+body {
+    background-color: #f5e3c5;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d35400;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+nav {
+    background-color: #f39c12;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Layout Principal ===== */
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    overflow: hidden; /* evita bugs com float */
+}
+
+.conteudo {
+    float: left;
+    width: 70%;
+}
+
+aside {
+    float: right;
+    width: 25%;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside li {
+    margin-bottom: 10px;
+}
+
+aside a {
+    color: #333;
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: #e67e22;
+}
+
+/* ===== Notícias ===== */
+.noticia {
+    background-color: white;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.noticia:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* ===== Rodapé ===== */
+footer {
+    clear: both;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border-top: 3px solid #e67e22;
+    margin-top: 20px;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 768px) {
+    .conteudo, aside {
+        float: none;
+        width: 100%;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .noticia {
+        margin: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    header h2 {
+        font-size: 1.2em;
+    }
+}
