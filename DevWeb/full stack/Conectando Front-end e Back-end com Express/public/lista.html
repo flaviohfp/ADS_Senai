@@ -15,26 +15,23 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
-    <div class="container mt-5">
-<<<<<<< HEAD
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2><i class="bi bi-people"></i> Lista de Usuários</h2>
-
-            <div class="card-total-usuario">
-                <div class="total-usuario">
-                    <h3>Usuários Totais:<span id="totalUsuarios">0</span></h3>
-                    <p id="total-usuario" class="total-numero">0</p>
-                </div>
-
-
-            </div>
-            <div id="busca">
-                <input type="Buscar Por idade minima" id="buscaIdade" class="form-control" placeholder="Buscar por idade mínima">
-            </div>
-            <div>
-                <a href="/cadastro" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Novo Usuário</a>
-                <button id="btnAtualizar" class="btn btn-secondary"><i class="bi bi-arrow-clockwise"></i> Atualizar</button>
-            </div>
+<div class="container mt-5">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2><i class="bi bi-people"></i> Lista de Usuários</h2>
+        <div class="card-total-usuarios">
+          <h3>Usuários totais: <span id="totalUsuarios">0</span></h3>
+          <p class="total-numero" id="totalUsuariosNum">0</p>
+        </div>
+        <div class="d-flex gap-2">
+          <input type="number" id="buscaIdade" class="form-control form-control-sm" min="0" placeholder="Idade mínima">
+          <button id="btnFiltrarIdade" class="btn btn-outline-info btn-sm"><i class="bi bi-funnel"></i></button>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="/cadastro" class="btn btn-primary"><i class="bi bi-plus-circle"></i> Novo</a>
+          <a href="/estatisticas.html" class="btn btn-info"><i class="bi bi-bar-chart"></i> Stats</a>
+          <button id="btnAtualizar" class="btn btn-secondary"><i class="bi bi-arrow-clockwise"></i></button>
+        </div>
+      </div>
 =======
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2><i class="bi bi-people"></i> Lista de Usuários</h2>
@@ -56,7 +53,12 @@
       </div>
 
       <div id="mensagem" class="alert text-center" style="display: none"></div>
-      <input type="text" id="filtro" placeholder="Pesquisar usuários...">
+      <div class="mb-3">
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-search"></i></span>
+          <input type="text" id="filtro" class="form-control" placeholder="Pesquisar por nome ou email...">
+        </div>
+      </div>
       <div class="card shadow">
         <div class="card-body">
           <table class="table table-striped table-hover">
