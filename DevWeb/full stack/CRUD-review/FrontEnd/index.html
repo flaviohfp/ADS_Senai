@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD de Alunos | Treino SAEP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <section class="hero">
+            <div>
+                <p class="eyebrow">Projeto de treino</p>
+                <h1>CRUD completo de alunos</h1>
+                <p class="hero-text">
+                    Cadastre, pesquise, edite e exclua alunos. Este projeto foi montado para
+                    praticar a estrutura de um CRUD no estilo SAEP usando HTML, CSS e JavaScript.
+                </p>
+            </div>
+            <div class="hero-card">
+                <span>Total de alunos</span>
+                <strong id="totalAlunos">0</strong>
+            </div>
+        </section>
+
+        <section class="grid">
+            <article class="card">
+                <div class="card-header">
+                    <h2>Formulario</h2>
+                    <p id="formStatus">Preencha os campos para cadastrar um aluno.</p>
+                </div>
+
+                <form id="alunoForm" class="form">
+                    <input type="hidden" id="alunoId">
+
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" placeholder="Ex.: Ana Beatriz" maxlength="80" required>
+
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade" placeholder="Ex.: 17" min="1" max="120" required>
+
+                    <label for="curso">Curso</label>
+                    <input type="text" id="curso" placeholder="Ex.: Desenvolvimento de Sistemas" maxlength="60" required>
+
+                    <div class="actions">
+                        <button type="submit" class="btn btn-primary" id="submitButton">Cadastrar</button>
+                        <button type="button" class="btn btn-secondary" id="cancelarEdicao">Cancelar edicao</button>
+                    </div>
+                </form>
+            </article>
+
+            <article class="card">
+                <div class="card-header">
+                    <h2>Consulta</h2>
+                    <p>Use o campo abaixo para localizar alunos pelo nome ou curso.</p>
+                </div>
+
+                <label for="busca">Pesquisar</label>
+                <input type="text" id="busca" placeholder="Digite para buscar...">
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Idade</th>
+                                <th>Curso</th>
+                                <th>Acoes</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tabelaAlunos"></tbody>
+                    </table>
+                </div>
+
+                <p id="mensagemLista" class="empty-state">
+                    Nenhum aluno cadastrado ainda.
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
