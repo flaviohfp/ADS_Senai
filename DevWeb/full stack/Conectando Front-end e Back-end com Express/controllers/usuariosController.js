@@ -13,8 +13,14 @@ async function listarUsuarios(req, res) {
         res.status(500).json({ erro: erro.message });
     }
 }
-
-
+async function ordenarNomes(req, res) {
+    try {
+        const usuarios = await usuariosService.ordenarNomes();
+        res.json(usuarios);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+}
 
 
 async function contarUsuarios(req, res) {
@@ -26,12 +32,39 @@ async function contarUsuarios(req, res) {
     }
 }
 
-
+async function estatisticasUsuarios(req, res) {
+    try {
+        const dados = await usuariosService.estatisticasUsuarios();
+        res.json(dados);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+}
 
 async function buscarUsuario(req, res) {
     try {
         const id = Number(req.params.id);
+        if (isNaN(id) || id <= 0) {
+            return res.status(400).json({ erro: "ID inválido" });
+        }
         const usuario = await usuariosService.buscarUsuarioPorId(id);
+
+        if (!usuario) {
+            return res.status(404).json({
+                erro: "Usuário não encontrado"
+            });
+        }
+
+        res.json(usuario);
+    } catch (erro) {
+        res.status(500).json({ erro: erro.message });
+    }
+}
+
+async function filtrarPorIdade(req, res) {
+    try {
+        const idade = Number(req.params.idade);
+        const usuario = await usuariosService.filtrarPorIdade(idade);
 
         if (!usuario) {
             return res.status(404).json({
@@ -66,6 +99,9 @@ async function criarUsuario(req, res) {
 async function atualizarUsuario(req, res) {
     try {
         const id = Number(req.params.id);
+        if (isNaN(id) || id <= 0) {
+            return res.status(400).json({ erro: "ID inválido" });
+        }
         const { nome, idade, email } = req.body;
 
         const usuario = await usuariosService.atualizarUsuario(id, nome, idade, email);
@@ -91,6 +127,9 @@ async function atualizarUsuario(req, res) {
 async function deletarUsuario(req, res) {
     try {
         const id = Number(req.params.id);
+        if (isNaN(id) || id <= 0) {
+            return res.status(400).json({ erro: "ID inválido" });
+        }
         const removido = await usuariosService.deletarUsuario(id);
 
         if (!removido) {
@@ -105,15 +144,16 @@ async function deletarUsuario(req, res) {
     }
 }
 
-
-
-
 module.exports = {
     listarUsuarios,
+    contarUsuarios,
     buscarUsuario,
     criarUsuario,
     atualizarUsuario,
     deletarUsuario,
-    contarUsuarios
+    filtrarPorIdade,
+    ordenarNomes,
+    estatisticasUsuarios
 };
+
 
