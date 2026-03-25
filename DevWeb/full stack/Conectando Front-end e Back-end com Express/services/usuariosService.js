@@ -21,9 +21,13 @@ async function buscarUsuarioPorId(id) {
 }
 
 async function contarUsuarios() {
-    const resultado = await pool.query(
-        "SELECT * FROM usuarios COUNT(*)"
-    );
+    try {
+        const resultado = await pool.query("SELECT COUNT(*) FROM usuarios");
+        return Number(resultado.rows[0].count);
+    } catch (error) {
+        throw new Error("Erro ao contar usuários: " + error.message);
+    }
+
 }
 
 

@@ -24,7 +24,7 @@ router.put("/:id", usuariosController.atualizarUsuario);
 router.delete("/:id", usuariosController.deletarUsuario);
 
 // GET /api/usuarios/total
-router.get("/", usuariosController.contarUsuarios);
+router.get("/total", usuariosController.contarUsuarios);
 
 module.exports = router;
 

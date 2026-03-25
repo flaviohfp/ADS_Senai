@@ -3,9 +3,50 @@ const lista = document.getElementById("lista");
 const mensagem = document.getElementById("mensagem");
 const botao = document.getElementById("btnAtualizar");
 const totalUsuarios = document.getElementById("totalUsuarios");
+const totalUsuario = document.getElementById("totalUsuario");
 
 let modalExcluir = null;
 let usuarioParaExcluir = null;
+
+
+async function contarUsuarios() {
+
+    try {
+        const resposta = await fetch("/api/usuarios/total");
+        if (!resposta.ok) {
+            throw new Error("Erro ao contar usuários");
+        }
+
+        const dados = await resposta.json();
+        const total = Number(dados.total);
+
+        if (!totalUsuarios || !totalUsuarios.parentElement) return;
+
+        totalUsuarios.textContent = total;
+        totalUsuarios.color = total > 0 ? "green" : "red";
+
+        totalUsuarios.parentElement.style.background =
+            total > 0 
+                ? "rgba(0, 128, 0, 0.1)" // Verde claro
+                : "rgba(255, 0, 0, 0.1)"; // Vermelho claro
+
+    } catch (erro) {
+        console.error("Erro ao contar usuários: " + erro.message);
+
+        if (totalUsuarios) {
+            totalUsuarios.textContent = "Erro";
+            totalUsuarios.color = "red";
+        }  
+
+
+        totalUsuarios.textContent = total;
+        totalUsuario.textContent = total;
+    }   
+}
+    
+
+
+
 
 
 
