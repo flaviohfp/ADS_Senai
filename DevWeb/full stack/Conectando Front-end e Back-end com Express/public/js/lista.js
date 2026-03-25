@@ -3,15 +3,57 @@ const lista = document.getElementById("lista");
 const mensagem = document.getElementById("mensagem");
 const botao = document.getElementById("btnAtualizar");
 const totalUsuarios = document.getElementById("totalUsuarios");
+const totalUsuario = document.getElementById("totalUsuario");
 
 let modalExcluir = null;
 let usuarioParaExcluir = null;
 
 
+async function contarUsuarios() {
 
-document.addEventListener('DOMContentLoaded', function() {
+    try {
+        const resposta = await fetch("/api/usuarios/total");
+        if (!resposta.ok) {
+            throw new Error("Erro ao contar usuários");
+        }
+
+        const dados = await resposta.json();
+        const total = Number(dados.total || 0);
+
+        if (!totalUsuarios || !totalUsuarios.parentElement) return;
+
+        totalUsuarios.textContent = total;
+        if (totalUsuario) totalUsuario.textContent = total;
+        totalUsuarios.style.color = total > 0 ? "green" : "red";
+
+        totalUsuarios.parentElement.style.background =
+            total > 0 
+                ? "rgba(0, 128, 0, 0.1)" // Verde claro
+                : "rgba(255, 0, 0, 0.1)"; // Vermelho claro
+
+} catch (erro) {
+        console.error("Erro ao contar usuários: " + erro.message);
+        const total = 0; // Fallback
+
+        if (totalUsuarios) {
+            totalUsuarios.textContent = total;
+            totalUsuario ? totalUsuario.textContent = total : null;
+            totalUsuarios.style.color = total > 0 ? "
+
+
+
+    }   
+}
+    
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', async function() {
     modalExcluir = new bootstrap.Modal(document.getElementById('modalExcluir'));
-    carregarUsuarios();
+    await Promise.all([carregarUsuarios(), contarUsuarios()]);
 });
 
 botao.addEventListener("click", carregarUsuarios);
@@ -31,6 +73,7 @@ async function carregarUsuarios() {
         const usuarios = await resposta.json();
 
         renderizarUsuarios(usuarios);
+        contarUsuarios();
 
         mensagem.style.display = "none";
     } catch (erro) {

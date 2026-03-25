@@ -11,6 +11,9 @@ const usuariosController = require("../controllers/usuariosController");
 // GET /api/usuarios - Listar todos
 router.get("/", usuariosController.listarUsuarios);
 
+// GET /api/usuarios/total - Contar usuarios
+router.get("/total", usuariosController.contarUsuarios);
+
 // GET /api/usuarios/:id - Buscar por ID
 router.get("/:id", usuariosController.buscarUsuario);
 
@@ -22,9 +25,6 @@ router.put("/:id", usuariosController.atualizarUsuario);
 
 // DELETE /api/usuarios/:id - Deletar usuário
 router.delete("/:id", usuariosController.deletarUsuario);
-
-// GET /api/usuarios/total
-router.get("/", usuariosController.contarUsuarios);
 
 module.exports = router;
 
