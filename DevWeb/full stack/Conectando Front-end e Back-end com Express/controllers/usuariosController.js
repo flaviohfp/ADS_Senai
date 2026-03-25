@@ -16,6 +16,7 @@ async function listarUsuarios(req, res) {
 
 
 
+
 async function contarUsuarios(req, res) {
     try {
         const total = await usuariosService.contarUsuarios();
