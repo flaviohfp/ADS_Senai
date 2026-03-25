@@ -1,1 +1,0 @@
-# TODO - Fix User Counting Function\n\n## Steps:\n\n- [ ] Step 1: Update services/usuariosService.js - Export contarUsuarios\n- [ ] Step 2: Fix controllers/usuariosController.js - Use correct service method\n- [ ] Step 3: Fix public/js/lista.js - Correct frontend logic and invocation\n- [ ] Step 4: Test the implementation\n- [ ] Step 5: Mark complete

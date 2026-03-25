@@ -16,8 +16,25 @@ async function buscarUsuarioPorId(id) {
 
     return resultado.rows[0];
 
-    
+}
+async function filtrarPorIdade(idade) {
 
+    const resultado = await pool.query(
+        "SELECT * FROM usuarios WHERE idade >= $1",
+        [idade]
+    );
+
+    return resultado.rows[0];
+
+}
+
+async function ordenarNomes() {
+
+    const resultado = await pool.query(
+        "SELECT * FROM usuarios ORDER BY nome ASC"
+    );
+
+    return resultado.rows;
 }
 
 async function contarUsuarios() {
@@ -25,15 +42,30 @@ async function contarUsuarios() {
         const resultado = await pool.query("SELECT COUNT(*) FROM usuarios");
         return Number(resultado.rows[0].count);
     } catch (error) {
-        throw new Error("Erro ao contar usuários: " + error.message);
+        throw new Error(`Erro ao contar usuários: ${error.message}`);
     }
-
 }
+
 
 
 /* -------------------------
    FUNÇÕES DE LÓGICA
 -------------------------- */
+
+
+async function estatisticasUsuarios() {
+    const resultado = await pool.query(`
+        SELECT 
+            COUNT(*) AS total,
+            COALESCE(AVG(idade), 0) AS media_idade,
+            COALESCE(MAX(idade), 0) AS maior_idade,
+            COALESCE(MIN(idade), 0) AS menor_idade
+        FROM usuarios
+    `);
+
+    return resultado.rows[0] || { total: 0, media_idade: 0, maior_idade: 0, menor_idade: 0 };
+}
+
 
 async function listarUsuarios() {
 
@@ -43,6 +75,8 @@ async function listarUsuarios() {
 
     return resultado.rows;
 }
+
+
 
 async function criarUsuario(nome, idade, email) {
     // Validação de nome vazio
@@ -55,9 +89,10 @@ async function criarUsuario(nome, idade, email) {
         throw new Error("Nome deve ter no mínimo 3 caracteres");
     }
 
+    idade = Number(idade);
     // Validação de idade obrigatória
-    if (idade === undefined || idade === null) {
-        throw new Error("Idade é obrigatória");
+    if (isNaN(idade) || idade === undefined || idade === null) {
+        throw new Error("Idade é obrigatória e deve ser número válido");
     }
 
     // Idade não pode ser negativa
@@ -163,6 +198,9 @@ module.exports = {
     criarUsuario,
     atualizarUsuario,
     deletarUsuario,
-    contarUsuarios
+    contarUsuarios,
+    filtrarPorIdade,
+    ordenarNomes,
+    estatisticasUsuarios
 };
 
