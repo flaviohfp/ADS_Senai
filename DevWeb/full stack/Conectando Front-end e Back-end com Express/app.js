@@ -11,22 +11,4 @@ app.use(express.static("public"));
 app.use("/api/usuarios", usuariosRoutes);
 
 // Rotas de páginas
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.get("/cadastro", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'cadastro.html'));
-});
-
-app.get("/lista", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'lista.html'));
-});
-
-app.get("/editar/:id", (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'editar.html'));
-});
-
-app.listen(3000, () => {
-  console.log("Servidor rodando em http://localhost:3000");
-});
+app.get("/", (req

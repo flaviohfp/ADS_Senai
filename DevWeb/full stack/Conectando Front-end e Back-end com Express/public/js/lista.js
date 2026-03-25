@@ -31,13 +31,14 @@ async function contarUsuarios() {
                 ? "rgba(0, 128, 0, 0.1)" // Verde claro
                 : "rgba(255, 0, 0, 0.1)"; // Vermelho claro
 
-    } catch (erro) {
+} catch (erro) {
         console.error("Erro ao contar usuários: " + erro.message);
+        const total = 0; // Fallback
 
         if (totalUsuarios) {
-            totalUsuarios.textContent = "Erro";
-            totalUsuarios.style.color = "red";
-        }  
+            totalUsuarios.textContent = total;
+            totalUsuario ? totalUsuario.textContent = total : null;
+            totalUsuarios.style.color = total > 0 ? "
 
 
 
