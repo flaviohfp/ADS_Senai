@@ -28,3 +28,6 @@ router.delete("/:id", usuariosController.deletarUsuario);
 
 module.exports = router;
 
+
+
+
