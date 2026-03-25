@@ -162,6 +162,7 @@ module.exports = {
     buscarUsuarioPorId,
     criarUsuario,
     atualizarUsuario,
-    deletarUsuario
+    deletarUsuario,
+    contarUsuarios
 };
 

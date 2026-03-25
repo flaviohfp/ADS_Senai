@@ -18,8 +18,8 @@ async function listarUsuarios(req, res) {
 
 async function contarUsuarios(req, res) {
     try {
-        const total = await usuariosService.listarUsuarios();
-        res.json(total);
+        const total = await usuariosService.contarUsuarios();
+        res.json({ total });
     } catch (erro) {
         res.status(500).json({ erro: erro.message });
     }

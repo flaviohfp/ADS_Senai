@@ -18,12 +18,13 @@ async function contarUsuarios() {
         }
 
         const dados = await resposta.json();
-        const total = Number(dados.total);
+        const total = Number(dados.total || 0);
 
         if (!totalUsuarios || !totalUsuarios.parentElement) return;
 
         totalUsuarios.textContent = total;
-        totalUsuarios.color = total > 0 ? "green" : "red";
+        if (totalUsuario) totalUsuario.textContent = total;
+        totalUsuarios.style.color = total > 0 ? "green" : "red";
 
         totalUsuarios.parentElement.style.background =
             total > 0 
@@ -35,12 +36,11 @@ async function contarUsuarios() {
 
         if (totalUsuarios) {
             totalUsuarios.textContent = "Erro";
-            totalUsuarios.color = "red";
+            totalUsuarios.style.color = "red";
         }  
 
 
-        totalUsuarios.textContent = total;
-        totalUsuario.textContent = total;
+
     }   
 }
     
@@ -50,9 +50,9 @@ async function contarUsuarios() {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     modalExcluir = new bootstrap.Modal(document.getElementById('modalExcluir'));
-    carregarUsuarios();
+    await Promise.all([carregarUsuarios(), contarUsuarios()]);
 });
 
 botao.addEventListener("click", carregarUsuarios);
@@ -72,6 +72,7 @@ async function carregarUsuarios() {
         const usuarios = await resposta.json();
 
         renderizarUsuarios(usuarios);
+        contarUsuarios();
 
         mensagem.style.display = "none";
     } catch (erro) {
